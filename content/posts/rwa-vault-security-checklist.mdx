@@ -1,0 +1,144 @@
+---
+title: "Before you deposit: a practical security checklist for RWA vaults"
+date: "2026-02-21"
+updated: "2026-08-10"
+description: "A pragmatic checklist for evaluating the security of RWA yield vaults, from legal structure and custody to oracle risk and smart contract design."
+image: "/images/7.png"
+---
+
+Most RWA vaults pitch the same story: regulated partners, conservative yields, institutional-grade everything. But from a builder’s or allocator’s perspective, the real question is simpler: **what do I need to verify before I let this vault anywhere near serious capital?** A clean audit and a slick dashboard are not enough.
+
+This post outlines a practical, opinionated checklist you can apply to any RWA yield vault – including STRATA – before you treat it as part of a real treasury stack. It is not a formal audit framework, but it covers the minimum questions you cannot skip if you care about downside more than marketing.
+
+## 1. Asset and legal reality
+
+Start with the boring layer: what is the vault actually holding in the real world, and how?
+
+- Is there a clear legal wrapper ([SPV](https://www.investopedia.com/terms/s/spv.asp), fund, note, etc.) with documented rights for token holders?
+- Do senior and junior tokens map cleanly to real-world priority in cash flows and liquidation?
+- What happens in default? Who makes decisions, and how are proceeds distributed?
+
+If the legal docs and on-chain documentation disagree about who takes losses first or who has claim to what, the vault is already unsafe – no matter how good the smart contract looks.
+
+## 2. Custody, keys, and treasury operations
+
+Next, check who can move assets and under what controls.
+
+- Which entities actually hold the RWA tokens or claims? Licensed custodians, a multi-sig, a single company wallet?
+- How are redemptions executed in practice? Is there a documented playbook for stress scenarios?
+- Are admin keys for moving funds, pausing the protocol, or changing parameters held by a single actor?
+
+You do not want a vault where multi-million exposure depends on one compromised laptop or one opaque operations team. Institutional-grade infrastructure should have clear key separation, multi-party control, and transparent operational flows.
+
+## 3. Oracles and pricing
+
+RWA vaults often hide [oracle](https://chain.link/oracles) risk behind “real-world valuation”. In reality, token prices and NAV updates still depend on systems that can fail or be manipulated.
+
+Key questions:
+
+- How is NAV calculated and updated on-chain?
+- Is there a single off-chain source, multiple feeds, or a verifiable on-chain calculation based on observable data?
+- What happens if the oracle stops updating, updates with obviously bad data, or lags during a market event?
+
+A serious RWA vault should define safe failure modes: pause new deposits, cap leverage, or switch to a conservative fallback – not keep operating blindly on stale or corrupt data.
+
+## 4. Strategy and risk parameters
+
+Even if the underlying assets are solid, strategy risk can break a vault.
+
+Look for:
+
+- Clear documentation of what the vault is allowed to hold (asset classes, durations, credit quality).
+- Hard limits on concentration, leverage, and maturity mismatches.
+- A process for updating these parameters that is visible on-chain and in governance records.
+
+If the pitch is “low-risk yield” but the strategy can be changed overnight into something completely different via a single governance proposal or admin transaction, you are not looking at a stable product – you are looking at a moving target.
+
+## 5. Identity, eligibility, and investor protections
+
+For RWA vaults, “any wallet can deposit” is usually a red flag, not a feature.
+
+Basic questions:
+
+- How does the protocol ensure only appropriate investors access specific tranches?
+- Is there a real identity and eligibility layer (KYC, jurisdiction, suitability) or just a checkbox on a frontend?
+- Are these rules enforced on-chain, or can a custom integration bypass the frontend entirely?
+
+In STRATA’s model, this is handled by [self-sovereign identity](https://www.w3.org/TR/did-core/) and Authorization [PDAs](https://solana.com/docs/core/pda): off-chain checks produce on-chain authorizations with narrow scope and expiry. The important part is not the buzzwords, but that the rules are enforced at the program level, not just in the UI.
+
+## 6. Vault smart contract design
+
+Finally, the part that most DeFi teams focus on first: the vault program itself.
+
+Minimum checks:
+
+- Is the core vault logic immutable or upgradeable? If upgradeable, who controls the upgrade path?
+- Is the tranche waterfall and loss allocation logic transparent and fully specified?
+- Have known dangerous patterns been avoided (unbounded loops, re-entrancy vectors, fragile math, unsafe CPI flows)?
+
+On [Solana](https://solana.com/), this also means understanding how PDAs, token accounts, and [CPIs](https://solana.com/docs/core/cpi) are used. A clean audit helps, but you should still be able to read a high-level description of the vault’s behavior under stress and see that the code matches that description.
+
+## Using this checklist as a builder
+
+If you are building RWA infrastructure, treat this checklist as a design guide, not just a due diligence tool. Every “yes” you can justify with documentation, tests, and code reduces the surface area for catastrophic surprises later.
+
+STRATA’s architecture is intentionally aligned with this layered view: legal and custody handled by specialist partners, risk curation explicit, identity and eligibility enforced via SSI and PDAs, and vault logic designed to be predictable under stress. That does not make the system magically risk-free – nothing in RWA is – but it does make it easier for serious allocators to understand what they are actually buying when they deposit.
+
+---
+
+<section className="mt-24 border-[4px] border-black bg-base p-8 shadow-[8px_8px_0px_#000] md:p-12">
+  <div className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-shock">
+    Knowledge Base / FAQ
+  </div>
+
+  <h2 className="mb-10 font-title text-4xl uppercase leading-tight text-text md:text-6xl">
+    Frequently Asked Questions
+  </h2>
+
+  <div className="border-t-[3px] border-black py-6">
+    <h3 className="mb-3 font-title text-2xl uppercase leading-tight text-shock">
+      What are the key non-technical risks when evaluating an RWA yield vault?
+    </h3>
+    <div className="font-mono leading-relaxed text-text">
+      Non-technical risks include bankruptcy remote structure of the SPV, legal ambiguity between on-chain tokens and real-world assets, custodian key centralization, and operational failure during asset redemption.
+    </div>
+  </div>
+
+  <div className="border-t-[3px] border-black py-6">
+    <h3 className="mb-3 font-title text-2xl uppercase leading-tight text-shock">
+      How should oracle failure modes be handled in RWA vault smart contracts?
+    </h3>
+    <div className="font-mono leading-relaxed text-text">
+      Contracts should implement defensive fallback mechanisms such as automated deposit pauses, staleness thresholds, and multi-source verification rather than executing blindly on outdated NAV data.
+    </div>
+  </div>
+
+  <div className="border-t-[3px] border-black py-6">
+    <h3 className="mb-3 font-title text-2xl uppercase leading-tight text-shock">
+      Why is on-chain identity and eligibility enforcement critical for RWA tranches?
+    </h3>
+    <div className="font-mono leading-relaxed text-text">
+      Enforcing KYC, accreditation, and jurisdiction checks at the smart contract level via authorization PDAs prevents regulatory non-compliance and ensures junior tranche first-loss risks are explicitly acknowledged.
+    </div>
+  </div>
+
+  <div className="border-t-[3px] border-black py-6">
+    <h3 className="mb-3 font-title text-2xl uppercase leading-tight text-shock">
+      What Solana-specific smart contract vectors should be audited in an RWA vault?
+    </h3>
+    <div className="font-mono leading-relaxed text-text">
+      Key audit vectors include proper PDA seed derivation, account ownership validation, arithmetic overflow checks, re-entrancy prevention during Cross-Program Invocations (CPIs), and explicit privilege controls on admin instructions.
+    </div>
+  </div>
+
+  <div className="border-t-[3px] border-black pt-6">
+    <h3 className="mb-3 font-title text-2xl uppercase leading-tight text-shock">
+      Can Zanvexis help audit or design RWA vault architectures and compliance pipelines?
+    </h3>
+    <div className="font-mono leading-relaxed text-text">
+      Yes. Zanvexis specializes in engineering Anchor-based Solana protocols, designing permissioned RWA vault architectures, zero-knowledge compliance integrations, and performing comprehensive security audits.
+    </div>
+  </div>
+</section>
+
+If you need help designing, auditing, or hardening the security architecture of an RWA vault (legal-technical alignment, admin controls, compliance flows, oracle assumptions, or off-chain operational risk), you can request a security-focused engagement through the [Services](/services) page or reach out directly via the [Contact](/contact) terminal.

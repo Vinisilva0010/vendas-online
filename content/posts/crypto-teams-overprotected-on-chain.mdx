@@ -1,0 +1,120 @@
+---
+title: "Most crypto teams are overprotected on-chain and underprotected off-chain"
+date: "2026-02-28"
+updated: "2026-08-10"
+description: "Why many crypto projects harden smart contracts while leaving wallets, domains, CI/CD, backend systems, and incident response dangerously exposed."
+image: "/images/10.png"
+---
+
+Ask most crypto teams about security and the first thing they mention is the audit. Sometimes it is the only thing they mention. That is understandable – smart contract exploits are public, dramatic, and expensive. But this creates a distorted security posture: teams spend months hardening on-chain logic while leaving the surrounding systems dangerously soft.
+
+In practice, a project does not get hacked “on-chain” or “off-chain” in isolation. It gets compromised through the weakest route that leads to control, signatures, approvals, funds, or user trust. That route might be a wallet, a domain registrar account, a cloud console, a CI/CD token, a backend signing service, or a social engineering attack against someone on the team. If those paths are weak, an audited protocol can still fail exactly where it assumed it was safe.
+
+## Why this imbalance keeps happening
+
+On-chain security is visible. It has a clean artifact: an audit report, a bug bounty, a formal verification claim, a list of fixed vulnerabilities. Off-chain security is messier. It lives in credential hygiene, DNS settings, deployment permissions, laptop hardening, vendor access, recovery procedures, and whether the team even knows who can touch what in production.
+
+That difference matters because teams optimize for what they can show publicly. A polished audit is easy to post. A disciplined secrets-management process, locked-down registrar account, hardware-backed authentication policy, or incident-response drill is much harder to market. But attackers are not grading brand assets. They are looking for leverage.
+
+## The modern off-chain attack surface
+
+For a crypto project, “off-chain” does not mean “unimportant”. It means everything that sits between user intent and protocol execution.
+
+That includes:
+
+- wallet infrastructure and signers,
+- backend services that prepare or authorize actions,
+- frontend code and deployment pipelines,
+- DNS and domain control,
+- cloud environments, API keys, and CI/CD tokens,
+- team devices and communication channels.
+
+According to cybersecurity frameworks like the [OWASP API Security Project](https://owasp.org/www-project-api-security/) and [CISA Supply Chain Risk Management](https://www.cisa.gov/topics/information-communications-technology-supply-chain-security), third-party dependencies, API authorization flaws, and build pipelines represent high-value attack surfaces that bypass application logic. Any one of these can become the bridge into user funds or protocol control. A compromised frontend can ask users to sign malicious approvals. A compromised backend can route users to the wrong contract or create invalid authorizations. A compromised domain can destroy trust in minutes even if the contracts themselves remain untouched.
+
+## Wallets and access paths are still the easiest win for attackers
+
+Many teams still operate as if a hot wallet with “temporary” privileges is acceptable because the contracts are audited. That logic breaks immediately when the hot wallet can pause contracts, upgrade logic, move treasury assets, or sign critical backend actions.
+
+The real issue is not just whether a wallet is hot or cold. It is whether the privilege model is narrow, segmented, and reviewable. If the same signer can deploy production changes, rotate parameters, access cloud infrastructure, and move assets, then the project has created a single-point-of-failure system and wrapped it in Web3 branding.
+
+## Frontend, DNS, and distribution are security-critical
+
+A lot of teams still think of the frontend as “just the website”. In crypto, that is false. The frontend is often the instruction layer that tells users what they are about to sign. If it is compromised, manipulated, or replaced, users can be guided into authorizing dangerous actions while believing they are doing something routine.
+
+Domain and DNS control sit one step above that. Lose the registrar account or mismanage DNS, and an attacker may not need to break the protocol at all. They can break the trust boundary around the protocol instead. This is especially dangerous in crypto because many users do not deeply inspect transaction payloads before signing them.
+
+## Incident response is the missing half of security
+
+Even strong teams eventually face something abnormal: a suspicious wallet movement, a leaked key, a poisoned package, an altered frontend build, or a fake support impersonation campaign. At that point, prevention is over. What matters is detection speed, escalation clarity, and whether the team knows exactly what to do next.
+
+That means serious projects need more than controls. They need response muscle. Who gets paged first? Which keys can be revoked? Which domains can be frozen? Which systems can be isolated? How do users get warned? How does the team preserve logs and evidence without making the situation worse? If those answers do not already exist before an incident, the project is improvising under fire.
+
+## A healthier model for crypto security
+
+The right model is not “smart contract security plus some ops”. It is **system security with an on-chain core**. The protocol code is one trust boundary among many. Around it sits wallet architecture, signing policy, domain security, backend authorization, deployment integrity, team access control, monitoring, and incident response.
+
+Teams that understand this build differently. They reduce privilege overlap. They isolate roles. They assume frontends can be compromised, keys can leak, vendors can fail, and humans can be manipulated. That mindset does not make a project invincible. But it does make failure harder to trigger, easier to contain, and less likely to become catastrophic.
+
+In crypto, being secure is not about proving your contracts are perfect. It is about making sure the rest of the business is not quietly undermining them.
+
+---
+
+<section className="mt-24 border-[4px] border-black bg-base p-8 shadow-[8px_8px_0px_#000] md:p-12">
+  <div className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-shock">
+    Knowledge Base / FAQ
+  </div>
+
+  <h2 className="mb-10 font-title text-4xl uppercase leading-tight text-text md:text-6xl">
+    Frequently Asked Questions
+  </h2>
+
+  <div className="border-t-[3px] border-black py-6">
+    <h3 className="mb-3 font-title text-2xl uppercase leading-tight text-shock">
+      Why do crypto teams focus heavily on smart contract audits while neglecting off-chain security?
+    </h3>
+    <div className="font-mono leading-relaxed text-text">
+      Smart contract audits produce visible artifacts like public PDFs and marketing badges. Off-chain security—such as credential management, DNS locking, and CI/CD secret rotation—is operational and less visible publicly, leading teams to optimize for marketing artifacts rather than complete threat coverage.
+    </div>
+  </div>
+
+  <div className="border-t-[3px] border-black py-6">
+    <h3 className="mb-3 font-title text-2xl uppercase leading-tight text-shock">
+      What components make up the modern off-chain attack surface for a Web3 project?
+    </h3>
+    <div className="font-mono leading-relaxed text-text">
+      The off-chain attack surface includes wallet signers, backend authorization APIs, frontend deployment pipelines, DNS/domain registrars, cloud infrastructure, API tokens, CI/CD runners, and internal team communication channels.
+    </div>
+  </div>
+
+  <div className="border-t-[3px] border-black py-6">
+    <h3 className="mb-3 font-title text-2xl uppercase leading-tight text-shock">
+      How can a compromised frontend or DNS record compromise a smart contract protocol?
+    </h3>
+    <div className="font-mono leading-relaxed text-text">
+      Frontends generate transaction payloads for user signatures. If an attacker compromises the web host or DNS records, they can serve a tampered interface that tricks users or multisig signers into approving malicious token approvals or contract calls.
+    </div>
+  </div>
+
+  <div className="border-t-[3px] border-black py-6">
+    <h3 className="mb-3 font-title text-2xl uppercase leading-tight text-shock">
+      What is the role of incident response in an off-chain security posture?
+    </h3>
+    <div className="font-mono leading-relaxed text-text">
+      Incident response defines detection speed and containment playbooks. It ensures teams know who to page, which keys to revoke, which infrastructure to isolate, and how to communicate during an anomaly before damage escalates.
+    </div>
+  </div>
+
+  <div className="border-t-[3px] border-black pt-6">
+    <h3 className="mb-3 font-title text-2xl uppercase leading-tight text-shock">
+      Can Zanvexis help secure the off-chain infrastructure of a crypto project?
+    </h3>
+    <div className="font-mono leading-relaxed text-text">
+      Yes. Zanvexis specializes in hardening off-chain crypto environments, including wallet access controls, backend authorization systems, CI/CD security, DNS protection, and incident response frameworks.
+    </div>
+  </div>
+</section>
+
+If you need help hardening the off-chain side of your crypto project
+(wallets, backend, domains, or incident response), you can request a
+security-focused engagement through the [Services](/services) page or
+reach out directly via the [Contact](/contact) terminal.

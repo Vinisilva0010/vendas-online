@@ -1,0 +1,115 @@
+---
+title: "The real attack surface of a crypto company"
+date: "2026-03-05"
+updated: "2026-08-10"
+description: "Why the attack surface of a crypto company includes contracts, wallets, APIs, cloud systems, domains, vendors, and internal human access."
+image: "/images/11.png"
+---
+
+When people hear “attack surface” in crypto, they usually think about smart contracts. That is only one slice of the problem. The real attack surface of a crypto company is the full set of systems, identities, permissions, vendors, and workflows that can be used to reach money, production control, or user trust.
+
+That includes the protocol, but it also includes wallets, signing devices, backend services, APIs, cloud consoles, deployment pipelines, frontend delivery, domain control, analytics scripts, support channels, internal communication, and third-party vendors. In other words, the attack surface is not “the dApp”. It is the company.
+
+## Attack surface is a living system
+
+A crypto company’s attack surface changes every time it adds a new wallet, new admin panel, new contractor, new cloud role, new npm package, new bridge integration, or new service provider. This is why a static checklist is never enough. According to [CISA](https://www.cisa.gov/), effective attack surface management requires continuous visibility over all digital assets, third-party dependencies, and access paths. Security in this context is not a one-time review. It is continuous attack surface management.
+
+The dangerous part is that growth usually expands exposure faster than teams realize. New features create new trust paths. New hires create new access paths. New integrations create new dependency paths. Over time, what looked like a clean protocol becomes a web of hidden privileges and external assumptions.
+
+## Contracts are the visible edge, not the whole perimeter
+
+Smart contracts remain the most visible component because they control irreversible value transfer. But visibility creates a false sense of completeness. A well-audited contract can still be surrounded by weak operational systems that give attackers indirect access to users, funds, or governance.
+
+For example, an attacker does not always need to exploit the contract if they can compromise the frontend that prepares the transaction, the backend that generates authorization data, or the signer that controls upgrades and treasury flows. This is the difference between code security and system security. A company can be strong in the first and weak in the second.
+
+## Wallets, keys, and permissions define practical control
+
+In crypto, control is usually exercised through keys and permissions long before it is exercised through business logic. That makes wallet architecture one of the most important parts of the company’s real attack surface.
+
+You need to know which wallets can do what, who can trigger those actions, and what safeguards sit in the path. Treasury custody, deployment signers, emergency pause authority, parameter management, backend signing services, and vendor-controlled access should all be mapped explicitly. If a team cannot explain its privilege graph clearly, it does not understand its own attack surface yet.
+
+## APIs, cloud systems, and pipelines are critical security terrain
+
+Modern crypto companies are not just protocols. They are software businesses with blockchain components. That means APIs, cloud storage, environment secrets, CI/CD pipelines, logging systems, observability tools, and internal dashboards all sit inside the practical threat model.
+
+These systems are especially dangerous because they often connect trusted internal actions with external blockchain consequences. A compromised API can generate dangerous responses. A poisoned CI/CD pipeline can deploy a malicious frontend. A leaked cloud token can expose secrets, redirect traffic, or enable silent persistence. None of this shows up in a contract audit, but all of it matters to real security.
+
+## Vendors and dependencies extend your attack surface beyond your team
+
+Most crypto companies rely on third parties for RPC, analytics, wallet infrastructure, frontend libraries, cloud services, monitoring, and custody. Every one of those relationships extends the company’s attack surface beyond its direct control.
+
+This does not mean avoiding vendors. It means treating them as part of the risk model. Which vendors can ship code into production-facing systems? Which ones receive sensitive telemetry? Which ones can influence transaction construction, domain routing, or signing workflows? Supply chain compromise is dangerous precisely because companies often inherit trust without fully measuring it.
+
+## Humans are still part of the perimeter
+
+A surprising amount of crypto risk still resolves to human access. Phishing, impersonation, deepfake verification scams, support abuse, and privilege misuse remain effective because they target the cheapest path through the system: people.
+
+That is why identity and access control inside the company matter as much as access control inside the protocol. Hardware-backed authentication, least privilege, role separation, access review, approval workflows, and disciplined offboarding are not enterprise theater. They are direct attack-surface reduction.
+
+## The useful way to think about it
+
+The most useful mental model is simple: every path that can influence user trust, transaction intent, privileged actions, or fund movement belongs in the attack surface. Once you see it that way, the company stops looking like a protocol with a website and starts looking like a network of trust boundaries that must be reduced, monitored, and defended.
+
+Strong crypto companies do not just secure contracts. They map control, reduce unnecessary exposure, constrain privilege, and assume that anything not explicitly hardened will eventually be tested. That is what it means to treat security as part of the business architecture instead of a post-launch accessory.
+
+---
+
+<section className="mt-24 border-[4px] border-black bg-base p-8 shadow-[8px_8px_0px_#000] md:p-12">
+  <div className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-shock">
+    Knowledge Base / FAQ
+  </div>
+
+  <h2 className="mb-10 font-title text-4xl uppercase leading-tight text-text md:text-6xl">
+    Frequently Asked Questions
+  </h2>
+
+  <div className="border-t-[3px] border-black py-6">
+    <h3 className="mb-3 font-title text-2xl uppercase leading-tight text-shock">
+      What defines the full attack surface of a crypto company?
+    </h3>
+    <div className="font-mono leading-relaxed text-text">
+      The attack surface includes smart contracts, wallets, signing devices, backend APIs, cloud infrastructure, CI/CD pipelines, domain hosting, third-party vendors, and internal human access paths.
+    </div>
+  </div>
+
+  <div className="border-t-[3px] border-black py-6">
+    <h3 className="mb-3 font-title text-2xl uppercase leading-tight text-shock">
+      Why are smart contract audits alone insufficient for overall security?
+    </h3>
+    <div className="font-mono leading-relaxed text-text">
+      Smart contract audits only review on-chain logic. Attackers frequently bypass on-chain security by compromising frontends, backend authorization services, deployment pipelines, or admin signers.
+    </div>
+  </div>
+
+  <div className="border-t-[3px] border-black py-6">
+    <h3 className="mb-3 font-title text-2xl uppercase leading-tight text-shock">
+      How do third-party vendors expand a crypto platform's threat model?
+    </h3>
+    <div className="font-mono leading-relaxed text-text">
+      Vendors providing RPC nodes, analytics, or wallet infrastructure hold implicit trust. If a vendor's system is compromised, attackers can inject malicious telemetry, redirect traffic, or alter transaction inputs.
+    </div>
+  </div>
+
+  <div className="border-t-[3px] border-black py-6">
+    <h3 className="mb-3 font-title text-2xl uppercase leading-tight text-shock">
+      What is the role of human access control in attack surface reduction?
+    </h3>
+    <div className="font-mono leading-relaxed text-text">
+      Human targets are often exploited via phishing, credential leaks, or social engineering. Enforcing hardware-backed authentication, least privilege access, and role separation directly reduces internal attack vectors.
+    </div>
+  </div>
+
+  <div className="border-t-[3px] border-black pt-6">
+    <h3 className="mb-3 font-title text-2xl uppercase leading-tight text-shock">
+      Can Zanvexis help map and secure off-chain crypto infrastructure?
+    </h3>
+    <div className="font-mono leading-relaxed text-text">
+      Yes. Zanvexis evaluates and hardens off-chain infrastructure, cloud IAM permissions, CI/CD pipelines, signer security, vendor risk models, and operational trust boundaries.
+    </div>
+  </div>
+</section>
+
+If you need help hardening the off-chain side of your crypto project
+(wallets, backend, domains, or incident response), you can request a
+security-focused engagement through the [Services](/services) page or
+reach out directly via the [Contact](/contact) terminal.

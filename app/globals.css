@@ -1,0 +1,427 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Paleta Zanvexis Web3 */
+  --color-base: #f9f1f5;
+  --color-identity: #51c3fc;
+  --color-shock: #381af8; /* Laranja Ferrugem */
+  --color-support: #0e0d0d;
+  --color-text: #030303;
+
+  /* Estrutura Física */
+  --border-heavy: 4px solid var(--color-support);
+  --border-medium: 2px solid var(--color-support);
+  
+  /* Sombras Brutalistas */
+  --shadow-hard: 6px 6px 0px var(--color-shock);
+  --shadow-hard-hover: 10px 10px 0px var(--color-shock);
+  --shadow-hard-active: 2px 2px 0px var(--color-shock);
+
+  /* Transições Físicas */
+  --transition-physical: 120ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body {
+  background-color: var(--color-base);
+  color: var(--color-text);
+  overflow-x: hidden;
+}
+
+/* Adicione ao final do seu globals.css */
+@keyframes reveal {
+  from {
+    transform: translateY(100%);
+    clip-path: inset(0 0 100% 0);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    clip-path: inset(0 0 0 0);
+    opacity: 1; /* Esta é a linha que faltou para o texto aparecer */
+  }
+}
+
+.animate-reveal {
+  animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee-left {
+  display: inline-block;
+  animation: marquee-left 30s linear infinite;
+  white-space: nowrap;
+}
+
+.animate-marquee-right {
+  display: inline-block;
+  animation: marquee-right 40s linear infinite;
+  white-space: nowrap;
+}
+
+/* Efeito de Scanner Tático */
+@keyframes scan {
+  0% { top: -10%; }
+  100% { top: 110%; }
+}
+
+.scan-line {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: var(--color-shock);
+  opacity: 0.15;
+  box-shadow: 0 0 40px 10px var(--color-shock);
+  animation: scan 8s linear infinite;
+  z-index: 40;
+  pointer-events: none;
+}
+
+/* Efeito Glitch Brutal para Hover */
+@keyframes glitch-anim {
+  0% { clip-path: inset(10% 0 80% 0); transform: translate(-4px, 4px); }
+  20% { clip-path: inset(80% 0 5% 0); transform: translate(4px, -4px); }
+  40% { clip-path: inset(40% 0 40% 0); transform: translate(4px, 4px); }
+  60% { clip-path: inset(20% 0 60% 0); transform: translate(-4px, -4px); }
+  80% { clip-path: inset(60% 0 20% 0); transform: translate(4px, -4px); }
+  100% { clip-path: inset(10% 0 80% 0); transform: translate(-4px, 4px); }
+}
+
+.hover-glitch:hover {
+  animation: glitch-anim 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+  color: var(--color-shock);
+  text-shadow: none;
+}
+
+/* Flutuação Brutalista (Sem suavidade exagerada) */
+@keyframes float-brutal {
+  0%, 100% { transform: translateY(0) rotate(var(--rotation, 0deg)); }
+  50% { transform: translateY(-8px) rotate(var(--rotation, 0deg)); }
+}
+
+.animate-float-brutal {
+  animation: float-brutal 4s ease-in-out infinite;
+}
+
+/* Efeito de Ruído Físico / CRT Grain */
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Pulso Mecânico do Título (Aumenta e diminui rápido) */
+@keyframes pulse-mechanical {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+.animate-pulse-mechanical {
+  /* 1.2 segundos deixa o movimento rápido e constante */
+  animation: pulse-mechanical 1.2s cubic-bezier(0.8, 0, 0.2, 1) infinite;
+}
+
+
+/* Efeito de Túnel 3D (O "Z" vindo do infinito) */
+@keyframes infinite-zoom {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.15; /* Aparece sutilmente lá no fundo */
+  }
+  70% {
+    opacity: 0.05; /* Vai apagando conforme chega perto */
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(40); /* Fica colossal e engole a tela */
+    opacity: 0;
+  }
+}
+
+.animate-zoom-void {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* A curva cubic-bezier faz ele começar devagar e acelerar brutalmente no final, como a física real de algo se aproximando */
+  animation: infinite-zoom 8s cubic-bezier(0.7, 0, 0.3, 1) infinite;
+}
+
+.zoom-delay {
+  animation-delay: 4s; /* O segundo Z entra na metade do caminho do primeiro */
+}
+
+
+/* Esteira Infinita para Títulos de Seção */
+@keyframes marquee-title {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee-title {
+  display: flex;
+  width: 200%;
+  animation: marquee-title 20s linear infinite;
+}
+
+/* Física do Baralho (Neo-Brutalismo) */
+.card-deck-item {
+  transform: translateX(var(--card-tx)) translateY(var(--card-ty)) rotate(var(--card-rot));
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.2s;
+}
+
+.card-deck-item:hover {
+  /* No hover: mantém o eixo X para não pular pro meio, sobe 80px no Y, zera a rotação e cresce 10% */
+  transform: translateX(var(--card-tx)) translateY(-80px) scale(1.1) rotate(0deg);
+  z-index: 50 !important;
+  border-color: var(--color-shock) !important;
+}
+
+
+/* Efeito de TV fora do ar (White Noise) agressivo e em toda a tela */
+.tv-static-full-screen {
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='6' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  filter: contrast(350%) grayscale(100%);
+  pointer-events: none;
+}
+
+@keyframes jitter-full {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-8px, 8px); }
+  50% { transform: translate(8px, -8px); }
+  75% { transform: translate(-8px, -8px); }
+  100% { transform: translate(8px, 8px); }
+}
+
+.animate-static-noise-full {
+  animation: jitter-full 0.06s infinite steps(1);
+}
+
+
+
+:root {
+  --color-base: #fdd6ec;
+  --color-identity: #9286fa;
+  --color-shock: #ff4500;
+  --color-text: #16131a;
+  --color-support: #625b68;
+  --color-line: rgba(146, 134, 250, 0.35);
+}
+
+::selection {
+  background: var(--color-shock);
+  color: var(--color-base);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(146, 134, 250, 0.08) 25%,
+      transparent 25%
+    ) 0 0 / 32px 32px,
+    var(--color-base);
+  color: var(--color-text);
+}
+
+a,
+button {
+  transition:
+    color 250ms ease,
+    background-color 250ms ease,
+    border-color 250ms ease,
+    box-shadow 250ms ease,
+    transform 250ms ease;
+}
+
+a:hover {
+  color: var(--color-shock);
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--color-shock);
+  outline-offset: 4px;
+}
+
+input,
+textarea,
+select {
+  border: 2px solid var(--color-identity);
+  background: var(--color-base);
+  color: var(--color-text);
+  transition:
+    border-color 250ms ease,
+    box-shadow 250ms ease,
+    transform 250ms ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-shock);
+  box-shadow: 6px 6px 0 var(--color-identity);
+  transform: translate(-2px, -2px);
+}
+
+.zan-card {
+  border: 3px solid var(--color-identity);
+  background: var(--color-base);
+  box-shadow: 8px 8px 0 var(--color-shock);
+  transition:
+    transform 300ms ease,
+    border-color 300ms ease,
+    background-color 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.zan-card:hover {
+  border-color: var(--color-shock);
+  background: var(--color-identity);
+  box-shadow: 12px 12px 0 var(--color-shock);
+  transform: translateY(-8px);
+}
+
+.zan-card:hover h1,
+.zan-card:hover h2,
+.zan-card:hover h3,
+.zan-card:hover p,
+.zan-card:hover span {
+  color: var(--color-base);
+}
+
+.zan-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--color-text);
+  background: var(--color-shock);
+  color: var(--color-text);
+  padding: 0.9rem 1.4rem;
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 5px 5px 0 var(--color-identity);
+}
+
+.zan-button:hover {
+  background: var(--color-identity);
+  color: var(--color-base);
+  box-shadow: 8px 8px 0 var(--color-shock);
+  transform: translate(-3px, -3px);
+}
+
+.zan-section-title {
+  position: relative;
+  width: fit-content;
+  color: var(--color-identity);
+  text-transform: uppercase;
+}
+
+.zan-section-title::after {
+  content: "";
+  display: block;
+  width: 70%;
+  height: 5px;
+  margin-top: 0.6rem;
+  background: var(--color-shock);
+  transition: width 300ms ease;
+}
+
+.zan-section-title:hover::after {
+  width: 100%;
+}
+
+.zan-badge {
+  display: inline-flex;
+  border: 2px solid var(--color-shock);
+  background: var(--color-base);
+  color: var(--color-shock);
+  padding: 0.35rem 0.55rem;
+  font-family: monospace;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+hr {
+  border: 0;
+  border-top: 3px solid var(--color-identity);
+  box-shadow: 5px 5px 0 var(--color-shock);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-base);
+}
+
+::-webkit-scrollbar-thumb {
+  border: 3px solid var(--color-base);
+  background: var(--color-identity);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-shock);
+}
+
+.vignette-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 40%,
+    rgba(14, 13, 13, 0.55) 100%
+  );
+}
+
+
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
