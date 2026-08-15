@@ -222,12 +222,12 @@ body {
 
 
 :root {
-  --color-base: #fdd6ec;
-  --color-identity: #9286fa;
-  --color-shock: #ff4500;
-  --color-text: #16131a;
-  --color-support: #625b68;
-  --color-line: rgba(146, 134, 250, 0.35);
+  --color-base: #56585a;
+  --color-identity: #8e8ef7;
+  --color-shock: #f7f3f1;
+  --color-text: #0e0e0d;
+  --color-support: #f7f6f8;
+  --color-line: rgba(246, 246, 247, 0.308);
 }
 
 ::selection {
