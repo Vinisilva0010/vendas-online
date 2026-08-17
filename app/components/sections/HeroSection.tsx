@@ -30,28 +30,28 @@ const FEATURED_GUIDES: FeaturedGuide[] = [
     title: "Comparativo de Marketplaces",
     description:
       "Taxas reais, prazos de repasse e regras operacionais de Mercado Livre, Shopee e TikTok Shop para definir onde focar sua operacao.",
-    image: "/service/im1.png",
+    image: "/service/im11.png",
     slug: "/comparativo-marketplaces-vender-online",
   },
   {
     title: "Calculo de Precificacao e Lucro",
     description:
       "Como calcular preco de venda considerando comissoes de canais, impostos, custo de produto e margem liquida sem fechar no vermelho.",
-    image: "/service/im22.png",
+    image: "/service/im222.png",
     slug: "/como-precificar-produtos-vender-online",
   },
   {
     title: "Estrategias de Frete e Envio",
     description:
       "Diferencas praticas entre Full, Coleta e Correios, custos ocultos de devolucao e como reduzir o impacto do frete no ticket final.",
-    image: "/service/im3.png",
+    image: "/service/im33.png",
     slug: "/tudo-sobre-frete-ecommerce",
   },
   {
     title: "Enquadramento Tributario: MEI vs ME",
     description:
       "O momento exato de migrar de MEI para ME, regras para emissao de nota fiscal obrigatoria e limites operacionais de faturamento.",
-    image: "/service/im4.png",
+    image: "/service/im44.png",
     slug: "/mei-ou-me-vender-online",
   },
 ];
@@ -61,35 +61,35 @@ const SECONDARY_GUIDES: SecondaryGuide[] = [
     id: 1,
     title: "Negociacao com Fornecedores",
     description: "Como encontrar fabricantes e distribuidores confiaveis com margem competitiva para revenda.",
-    image: "/service/im5.png",
+    image: "/service/im555.png",
     slug: "/negociar-fornecedores-revenda",
   },
   {
     id: 2,
     title: "Logistica e Envio em Marketplaces",
     description: "Fluxos de despacho rapido, impressao de etiquetas e controle de prazos de entrega.",
-    image: "/service/im6.png",
+    image: "/service/im66.png",
     slug: "/logistica-envio-marketplaces",
   },
   {
     id: 3,
     title: "Direito de Troca e Devolucao",
     description: "Aplicacao do CDC no comercio eletronico, direito de arrependimento e gestao de frete reverso.",
-    image: "/service/im7.png",
+    image: "/service/im77.png",
     slug: "/direito-troca-devolucao-ecommerce",
   },
   {
     id: 4,
     title: "Vender no TikTok Shop",
     description: "Configuracao de catalogo, integracao de afiliados e operacao de vendas com conteudo nativo.",
-    image: "/service/im8.png",
+    image: "/service/im888.png",
     slug: "/vender-no-tiktok-shop",
   },
   {
     id: 5,
     title: "Vender na Shopee",
     description: "Regras do programa de frete gratis, aplicacao de cupons e posicionamento no mecanismo de busca.",
-    image: "/service/im9.png",
+    image: "/service/im99.png",
     slug: "/vender-na-shopee",
   },
   {
@@ -220,34 +220,51 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Badges contextuais */}
+        {/* Imagens Flutuantes (Extra Grandes) */}
         <div
           className={`absolute inset-0 z-10 pointer-events-none transition-opacity duration-1000 ${
             isDecoded ? "opacity-100" : "opacity-0"
           }`}
         >
+          {/* Imagem 1: Superior Direita */}
           <div
-            className="absolute top-[8%] right-[2%] md:top-[18%] md:right-[10%] animate-float-brutal scale-75 md:scale-100"
-            style={{ "--rotation": "4deg", animationDelay: "0s" } as React.CSSProperties}
+            className="absolute -top-[2%] -right-[2%] md:top-[4%] md:right-[2%] lg:top-[6%] lg:right-[4%] animate-float-brutal"
+            style={{ "--rotation": "6deg", animationDelay: "0s" } as React.CSSProperties}
           >
-            <div className="bg-base border-2 border-support px-2 md:px-3 py-1 font-mono text-[10px] md:text-xs text-support shadow-hard">
-              [ MARKETPLACES // LOGISTICA // PRECIFICACAO ]
+            <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[440px] lg:h-[440px] xl:w-[500px] xl:h-[500px] flex items-center justify-center">
+              <img
+                src="/images/hero-float-1.png"
+                alt="Destaque Operacional 1"
+                className="w-full h-full object-contain drop-shadow-[0_25px_45px_rgba(0,0,0,0.8)]"
+              />
             </div>
           </div>
+
+          {/* Imagem 2: Inferior Esquerda */}
           <div
-            className="absolute bottom-[18%] left-[2%] md:bottom-[28%] md:left-[8%] animate-float-brutal scale-75 md:scale-100"
-            style={{ "--rotation": "-3deg", animationDelay: "1s" } as React.CSSProperties}
+            className="absolute -bottom-[4%] -left-[2%] md:bottom-[6%] md:left-[1%] lg:bottom-[8%] lg:left-[3%] animate-float-brutal"
+            style={{ "--rotation": "-8deg", animationDelay: "1s" } as React.CSSProperties}
           >
-            <div className="bg-base border-2 border-support px-2 md:px-3 py-1 font-mono text-[10px] md:text-xs text-shock shadow-hard">
-              [ MEI OU ME :: MARGEM REAL ]
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] xl:w-[560px] xl:h-[560px] flex items-center justify-center">
+              <img
+                src="/images/hero-float-2.png"
+                alt="Destaque Operacional 2"
+                className="w-full h-full object-contain drop-shadow-[0_30px_50px_rgba(0,0,0,0.8)]"
+              />
             </div>
           </div>
+
+          {/* Imagem 3: Inferior Direita */}
           <div
-            className="absolute top-[70%] right-[2%] md:top-[65%] md:right-[18%] animate-float-brutal scale-75 md:scale-100"
-            style={{ "--rotation": "2deg", animationDelay: "2s" } as React.CSSProperties}
+            className="absolute top-[60%] -right-[2%] md:top-[52%] md:right-[4%] lg:top-[50%] lg:right-[6%] animate-float-brutal"
+            style={{ "--rotation": "5deg", animationDelay: "2s" } as React.CSSProperties}
           >
-            <div className="bg-identity border-2 border-support px-2 md:px-3 py-1 font-mono text-[10px] md:text-xs text-text shadow-hard">
-              [ SHOPEE // MERCADO LIVRE // TIKTOK SHOP ]
+            <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[440px] lg:h-[440px] xl:w-[480px] xl:h-[480px] flex items-center justify-center">
+              <img
+                src="/images/hero-float-3.png"
+                alt="Destaque Operacional 3"
+                className="w-full h-full object-contain drop-shadow-[0_25px_45px_rgba(248,74,26,0.5)]"
+              />
             </div>
           </div>
         </div>
@@ -259,12 +276,14 @@ export default function HeroSection() {
           }`}
         >
           <h1
-            className={`hover-glitch font-title text-[clamp(2.5rem,14vw,22rem)] whitespace-nowrap leading-[0.8] tracking-tight md:tracking-tighter uppercase m-0 transition-all duration-700 text-center ${
-              isDecoded ? "text-text" : "text-shock"
+            className={`hover-glitch font-title font-black text-[clamp(2.5rem,14vw,22rem)] whitespace-nowrap leading-[0.8] tracking-tight md:tracking-tighter uppercase m-0 transition-all duration-700 text-center ${
+              isDecoded ? "text-[#f7f3f1]" : "text-transparent"
             }`}
             style={{
-              textShadow: isDecoded ? "6px 6px 0px var(--color-shock)" : "none",
-              WebkitTextStroke: isDecoded ? "none" : "2px var(--color-shock)",
+              WebkitTextStroke: isDecoded ? "3px #8e8ef7" : "3px #8e8ef7",
+              textShadow: isDecoded
+                ? "8px 8px 0px #8e8ef7, 14px 14px 0px #000000"
+                : "none",
             }}
           >
             {displayText}
@@ -273,12 +292,12 @@ export default function HeroSection() {
 
         {/* Rotulo tecnico */}
         <div
-          className={`absolute top-4 left-4 md:top-12 md:left-12 font-mono text-[8px] md:text-xs text-support uppercase tracking-widest transition-opacity duration-1000 ${
+          className={`absolute top-4 left-4 md:top-12 md:left-12 font-mono text-[8px] md:text-xs text-[#f7f3f1] uppercase tracking-widest transition-opacity duration-1000 ${
             isDecoded ? "opacity-100" : "opacity-0"
           }`}
         >
-          [ BASE OPERACIONAL: VENDAS ONLINE ]<br />
-          [ RESPOSTAS E DIRETRIZES VALIDAS ]
+          <span className="text-[#8e8ef7] font-black">[ BASE OPERACIONAL: VENDAS ONLINE ]</span><br />
+          <span className="font-bold">[ RESPOSTAS E DIRETRIZES VALIDAS ]</span>
         </div>
 
         {/* Indicador de scroll */}
@@ -287,12 +306,14 @@ export default function HeroSection() {
             isDecoded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <span className="font-mono text-[8px] md:text-xs text-support uppercase tracking-widest">
+          <span className="font-mono text-[9px] md:text-xs text-[#f7f3f1] font-bold uppercase tracking-widest">
             Explorar Conteudos
           </span>
-          <div className="w-1 h-12 md:h-20 bg-shock border-x-2 border-t-2 border-support"></div>
+          <div className="w-1.5 h-12 md:h-20 bg-[#8e8ef7] border-x-2 border-t-2 border-black shadow-[2px_2px_0px_#000]"></div>
         </div>
       </div>
+
+
 
       {/* Dobra 2: 4 Guias Principais */}
       <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 -mt-12 md:-mt-24 pb-20 flex flex-col gap-12">

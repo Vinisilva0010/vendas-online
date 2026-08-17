@@ -8,21 +8,21 @@ const CANAIS_VENDA = [
     id: "CANAL_01",
     name: "MERCADO LIVRE",
     desc: "Estratégias para atingir MercadoLíder, operação no Full, regras de reputação em 60 dias e controle de custos de frete para anúncios acima e abaixo de R$ 79.",
-    image: "/images/apex.png",
+    image: "/images/hero-float-3.png",
     link: "/vender-no-mercado-livre",
   },
   {
     id: "CANAL_02",
     name: "SHOPEE BRASIL",
     desc: "Otimização de tráfego orgânico via SEO interno, programa de frete grátis, cálculo de comissão com taxa fixa e participação em campanhas de cupons.",
-    image: "/images/flash1.png",
+    image: "/images/hero-float-2.png",
     link: "/vender-na-shopee",
   },
   {
     id: "CANAL_03",
     name: "TIKTOK SHOP",
     desc: "Estruturação de vendas via vídeos curtos e lives, programa de comissão de afiliados, sincronização de catálogo e despacho em 24 horas.",
-    image: "/images/quant.png",
+    image: "/images/hero-float-1.png",
     link: "/vender-no-tiktok-shop",
   },
   {
@@ -80,91 +80,128 @@ export default function BotsArch() {
       {/* Tela Sticky para Mobile / Normal para PC */}
       <div className="sticky top-0 h-screen md:h-auto w-full overflow-hidden flex flex-col justify-center md:py-32">
         {/* Background com badges flutuantes de e-commerce */}
-        <div className="absolute inset-0 z-0 pointer-events-none opacity-40 overflow-hidden">
-          {/* Topo Esquerda */}
-          <div
-            className="font-mono text-xs md:text-sm font-bold border-2 border-support bg-base px-3 py-1 absolute top-[5%] left-[2%] rotate-[-15deg] animate-float-brutal"
-            style={{ animationDuration: "6s" }}
-          >
-            [ MERCADO_ENVIOS_FULL ]
+        {/* BACKGROUND KINETIC BRUTALIST TAPES // ROLAGEM INFINITA */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden flex flex-col justify-between py-8 md:py-12 opacity-35 select-none">
+          
+          {/* FITA 1: SUPERIOR // MOVE PARA ESQUERDA */}
+          <div className="w-[140%] -ml-[20%] rotate-[-4deg] bg-black border-y-[4px] md:border-y-[6px] border-[#8e8ef7] py-2 md:py-3 shadow-[0_10px_30px_rgba(0,0,0,0.8)] overflow-hidden">
+            <div className="animate-tape-left">
+              {/* Bloco A */}
+              <div className="flex gap-8 items-center font-title font-black text-3xl sm:text-5xl md:text-7xl tracking-tighter uppercase text-[#f7f3f1] pr-8">
+                <span>MERCADO LIVRE FULL</span>
+                <span className="text-[#8e8ef7]">///</span>
+                <span style={{ WebkitTextStroke: "2px #8e8ef7", color: "transparent" }}>SHOPEE ADS & SEO</span>
+                <span className="text-[#8e8ef7]">///</span>
+                <span>TIKTOK SHOP AFILIADOS</span>
+                <span className="text-[#8e8ef7]">///</span>
+                <span style={{ WebkitTextStroke: "2px #f7f3f1", color: "transparent" }}>LOGÍSTICA REVERSA</span>
+                <span className="text-[#8e8ef7]">///</span>
+              </div>
+              {/* Bloco B (Duplicado para loop contínuo) */}
+              <div className="flex gap-8 items-center font-title font-black text-3xl sm:text-5xl md:text-7xl tracking-tighter uppercase text-[#f7f3f1] pr-8">
+                <span>MERCADO LIVRE FULL</span>
+                <span className="text-[#8e8ef7]">///</span>
+                <span style={{ WebkitTextStroke: "2px #8e8ef7", color: "transparent" }}>SHOPEE ADS & SEO</span>
+                <span className="text-[#8e8ef7]">///</span>
+                <span>TIKTOK SHOP AFILIADOS</span>
+                <span className="text-[#8e8ef7]">///</span>
+                <span style={{ WebkitTextStroke: "2px #f7f3f1", color: "transparent" }}>LOGÍSTICA REVERSA</span>
+                <span className="text-[#8e8ef7]">///</span>
+              </div>
+            </div>
           </div>
 
-          {/* Meio Esquerda */}
-          <div
-            className="font-mono text-xs md:text-sm font-bold border-2 border-support bg-base px-3 py-1 absolute top-[40%] left-[2%] rotate-[12deg] animate-float-brutal"
-            style={{ animationDuration: "8s", animationDelay: "1s" }}
-          >
-            [ SHOPEE_ADS_SEO ]
+          {/* FITA 2: CENTRAL // MOVE PARA DIREITA */}
+          <div className="w-[140%] -ml-[20%] rotate-[3deg] bg-[#8e8ef7] border-y-[4px] md:border-y-[6px] border-black py-2 md:py-4 shadow-[0_15px_35px_rgba(0,0,0,0.9)] overflow-hidden">
+            <div className="animate-tape-right">
+              {/* Bloco A */}
+              <div className="flex gap-8 items-center font-title font-black text-4xl sm:text-6xl md:text-8xl tracking-tighter uppercase text-black pr-8">
+                <span>MARGEM REAL</span>
+                <span className="text-[#f7f3f1]">✦</span>
+                <span style={{ WebkitTextStroke: "2px #000000", color: "#f7f3f1" }}>EMISSÃO NFE AUTOMÁTICA</span>
+                <span className="text-[#f7f3f1]">✦</span>
+                <span>HUB DE INTEGRAÇÃO</span>
+                <span className="text-[#f7f3f1]">✦</span>
+                <span style={{ WebkitTextStroke: "2px #000000", color: "#f7f3f1" }}>PRECIFICAÇÃO LÍQUIDA</span>
+                <span className="text-[#f7f3f1]">✦</span>
+              </div>
+              {/* Bloco B (Duplicado para loop contínuo) */}
+              <div className="flex gap-8 items-center font-title font-black text-4xl sm:text-6xl md:text-8xl tracking-tighter uppercase text-black pr-8">
+                <span>MARGEM REAL</span>
+                <span className="text-[#f7f3f1]">✦</span>
+                <span style={{ WebkitTextStroke: "2px #000000", color: "#f7f3f1" }}>EMISSÃO NFE AUTOMÁTICA</span>
+                <span className="text-[#f7f3f1]">✦</span>
+                <span>HUB DE INTEGRAÇÃO</span>
+                <span className="text-[#f7f3f1]">✦</span>
+                <span style={{ WebkitTextStroke: "2px #000000", color: "#f7f3f1" }}>PRECIFICAÇÃO LÍQUIDA</span>
+                <span className="text-[#f7f3f1]">✦</span>
+              </div>
+            </div>
           </div>
 
-          {/* Base Esquerda */}
-          <div
-            className="font-mono text-xs md:text-sm font-bold border-2 border-support bg-base px-3 py-1 absolute top-[80%] left-[5%] rotate-[35deg] animate-float-brutal"
-            style={{ animationDuration: "7s", animationDelay: "0.5s" }}
-          >
-            [ TIKTOK_AFFILIATES ]
+          {/* FITA 3: INFERIOR // MOVE PARA ESQUERDA */}
+          <div className="w-[140%] -ml-[20%] rotate-[-2deg] bg-[#f7f3f1] border-y-[4px] md:border-y-[6px] border-black py-2 md:py-3 shadow-[0_10px_30px_rgba(0,0,0,0.8)] overflow-hidden">
+            <div className="animate-tape-left">
+              {/* Bloco A */}
+              <div className="flex gap-8 items-center font-title font-black text-3xl sm:text-5xl md:text-7xl tracking-tighter uppercase text-black pr-8">
+                <span style={{ WebkitTextStroke: "2px #8e8ef7", color: "transparent" }}>CHECKOUT PRÓPRIO</span>
+                <span className="text-[#8e8ef7]">//</span>
+                <span>REPASSE FINANCEIRO D+2</span>
+                <span className="text-[#8e8ef7]">//</span>
+                <span style={{ WebkitTextStroke: "2px #000000", color: "#8e8ef7" }}>ENQUADRAMENTO MEI / ME</span>
+                <span className="text-[#8e8ef7]">//</span>
+              </div>
+              {/* Bloco B (Duplicado para loop contínuo) */}
+              <div className="flex gap-8 items-center font-title font-black text-3xl sm:text-5xl md:text-7xl tracking-tighter uppercase text-black pr-8">
+                <span style={{ WebkitTextStroke: "2px #8e8ef7", color: "transparent" }}>CHECKOUT PRÓPRIO</span>
+                <span className="text-[#8e8ef7]">//</span>
+                <span>REPASSE FINANCEIRO D+2</span>
+                <span className="text-[#8e8ef7]">//</span>
+                <span style={{ WebkitTextStroke: "2px #000000", color: "#8e8ef7" }}>ENQUADRAMENTO MEI / ME</span>
+                <span className="text-[#8e8ef7]">//</span>
+              </div>
+            </div>
           </div>
 
-          {/* Topo Direita */}
-          <div
-            className="font-mono text-xs md:text-sm font-bold border-2 border-support bg-base px-3 py-1 absolute top-[5%] right-[2%] rotate-[-20deg] animate-float-brutal"
-            style={{ animationDuration: "9s", animationDelay: "2s" }}
-          >
-            [ CHECKOUT_PROPRIO ]
-          </div>
-
-          {/* Meio Direita */}
-          <div
-            className="font-mono text-xs md:text-sm font-bold border-2 border-support bg-base px-3 py-1 absolute top-[35%] right-[2%] rotate-[-25deg] animate-float-brutal"
-            style={{ animationDuration: "10s", animationDelay: "1.5s" }}
-          >
-            [ LOGISTICA_REVERSA ]
-          </div>
-
-          {/* Base Direita */}
-          <div
-            className="font-mono text-xs md:text-sm font-bold border-2 border-support bg-base px-3 py-1 absolute top-[75%] right-[5%] rotate-[22deg] animate-float-brutal"
-            style={{ animationDuration: "6.5s", animationDelay: "0.8s" }}
-          >
-            [ EMISSAO_NFE_AUTO ]
-          </div>
-
-          {/* Topo Centro */}
-          <div
-            className="font-mono text-xs md:text-sm font-bold border-2 border-support bg-base px-3 py-1 absolute top-[2%] left-[30%] rotate-[18deg] animate-float-brutal"
-            style={{ animationDuration: "8.5s", animationDelay: "1.2s" }}
-          >
-            [ HUB_INTEGRACAO ]
-          </div>
-
-          <div
-            className="font-mono text-xs md:text-sm font-bold border-2 border-support bg-base px-3 py-1 absolute top-[8%] right-[30%] rotate-[-30deg] animate-float-brutal"
-            style={{ animationDuration: "7.5s", animationDelay: "2.5s" }}
-          >
-            [ MARGEM_CONTRIBUICAO ]
-          </div>
-
-          {/* Base Centro */}
-          <div
-            className="font-mono text-xs md:text-sm font-bold border-2 border-support bg-base px-3 py-1 absolute bottom-[2%] left-[45%] rotate-[10deg] animate-float-brutal"
-            style={{ animationDuration: "9.5s", animationDelay: "0.3s" }}
-          >
-            [ REPASSE_FINANCEIRO ]
-          </div>
         </div>
 
-        {/* Título da Seção */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-12 mb-8 md:mb-24 text-center md:text-left w-full">
-          <span className="font-mono text-shock text-sm uppercase tracking-widest mb-2 md:mb-4 block">
-            [ CANAIS & PLATAFORMAS ]
-          </span>
-          <h2 className="font-title text-[clamp(2.5rem,8vw,6rem)] leading-[0.85] tracking-tight uppercase text-text m-0">
-            CANAIS DE VENDA <br />
+
+
+
+
+
+
+
+
+       {/* Título da Seção */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-12 mb-12 md:mb-20 text-center md:text-left w-full">
+          
+          {/* Badge Brutalista */}
+          <div className="inline-block border-[3px] border-black bg-[#8e8ef7] px-3 md:px-4 py-1 mb-4 md:mb-6 shadow-[4px_4px_0px_#000000]">
+            <span className="font-mono text-xs md:text-sm font-black text-black uppercase tracking-widest block">
+              [ CANAIS & PLATAFORMAS ]
+            </span>
+          </div>
+
+          {/* Tipografia Massiva */}
+          <h2 className="font-title font-black text-[clamp(2.8rem,8.5vw,6.5rem)] leading-[0.85] tracking-tight uppercase m-0">
             <span
-              className="text-transparent"
-              style={{ WebkitTextStroke: "2px var(--color-support)" }}
+              className="text-[#f7f3f1] block"
+              style={{
+                WebkitTextStroke: "2px #000000",
+                textShadow: "6px 6px 0px #8e8ef7, 10px 10px 0px #000000",
+              }}
             >
-              guias de operação
+              CANAIS DE VENDA
+            </span>
+            <span
+              className="text-transparent block mt-2"
+              style={{
+                WebkitTextStroke: "3px #8e8ef7",
+                textShadow: "4px 4px 0px #000000",
+              }}
+            >
+              GUIAS DE OPERAÇÃO
             </span>
           </h2>
         </div>
