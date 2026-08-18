@@ -31,28 +31,28 @@ const FEATURED_GUIDES: FeaturedGuide[] = [
     description:
       "Taxas reais, prazos de repasse e regras operacionais de Mercado Livre, Shopee e TikTok Shop para definir onde focar sua operacao.",
     image: "/service/im11.png",
-    slug: "/comparativo-marketplaces-vender-online",
+    slug: "services/comparativo-marketplaces-vender-online",
   },
   {
     title: "Calculo de Precificacao e Lucro",
     description:
       "Como calcular preco de venda considerando comissoes de canais, impostos, custo de produto e margem liquida sem fechar no vermelho.",
     image: "/service/im222.png",
-    slug: "/como-precificar-produtos-vender-online",
+    slug: "services/como-precificar-produtos-vender-online",
   },
   {
     title: "Estrategias de Frete e Envio",
     description:
       "Diferencas praticas entre Full, Coleta e Correios, custos ocultos de devolucao e como reduzir o impacto do frete no ticket final.",
     image: "/service/im33.png",
-    slug: "/tudo-sobre-frete-ecommerce",
+    slug: "services/tudo-sobre-frete-ecommerce",
   },
   {
     title: "Enquadramento Tributario: MEI vs ME",
     description:
       "O momento exato de migrar de MEI para ME, regras para emissao de nota fiscal obrigatoria e limites operacionais de faturamento.",
     image: "/service/im44.png",
-    slug: "/mei-ou-me-vender-online",
+    slug: "services/mei-ou-me-vender-online",
   },
 ];
 
@@ -62,42 +62,42 @@ const SECONDARY_GUIDES: SecondaryGuide[] = [
     title: "Negociacao com Fornecedores",
     description: "Como encontrar fabricantes e distribuidores confiaveis com margem competitiva para revenda.",
     image: "/service/im555.png",
-    slug: "/negociar-fornecedores-revenda",
+    slug: "services/negociar-fornecedores-revenda",
   },
   {
     id: 2,
     title: "Logistica e Envio em Marketplaces",
     description: "Fluxos de despacho rapido, impressao de etiquetas e controle de prazos de entrega.",
     image: "/service/im66.png",
-    slug: "/logistica-envio-marketplaces",
+    slug: "services/logistica-envio-marketplaces",
   },
   {
     id: 3,
     title: "Direito de Troca e Devolucao",
     description: "Aplicacao do CDC no comercio eletronico, direito de arrependimento e gestao de frete reverso.",
     image: "/service/im77.png",
-    slug: "/direito-troca-devolucao-ecommerce",
+    slug: "services/direito-troca-devolucao-ecommerce",
   },
   {
     id: 4,
     title: "Vender no TikTok Shop",
     description: "Configuracao de catalogo, integracao de afiliados e operacao de vendas com conteudo nativo.",
     image: "/service/im888.png",
-    slug: "/vender-no-tiktok-shop",
+    slug: "services/vender-no-tiktok-shop",
   },
   {
     id: 5,
     title: "Vender na Shopee",
     description: "Regras do programa de frete gratis, aplicacao de cupons e posicionamento no mecanismo de busca.",
     image: "/service/im99.png",
-    slug: "/vender-na-shopee",
+    slug: "services/vender-na-shopee",
   },
   {
     id: 6,
     title: "Qual Sistema de Loja Usar",
     description: "Comparativo entre plataformas proprias e SaaS para estruturar seu canal direto de vendas.",
     image: "/service/im10.png",
-    slug: "/qual-sistema-loja-virtual-usar",
+    slug: "services/qual-sistema-loja-virtual-usar",
   },
 ];
 
