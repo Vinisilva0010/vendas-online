@@ -23,7 +23,7 @@ const anton = Anton({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.zanvendas.com"),
+  metadataBase: new URL("https://zanvendas.zanvexis.com/"),
   title: {
     default: "Zanvendas | Guia & Operação de Vendas Online no Brasil",
     template: "%s | Zanvendas",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     title: "Zanvendas | Guia & Operação de Vendas Online no Brasil",
     description:
       "Base técnica para lojistas e sellers: fórmulas de precificação com divisor de margem, regras de envio nos marketplaces, tributação e conformidade fiscal.",
-    url: "https://www.zanvendas.com",
+    url: "https://zanvendas.zanvexis.com/",
     siteName: "Zanvendas",
     locale: "pt_BR",
     type: "website",

@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/", "/admin/"],
     },
-    sitemap: "https://www.zanvexis.com/sitemap.xml",
-    host: "https://www.zanvexis.com",
+    sitemap: "https://zanvendas.zanvexis.com/sitemap.xml",
+    host: "https://zanvendas.zanvexis.com",
   };
 }

@@ -49,28 +49,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.3,
     },
-  ];
+  ] as const as MetadataRoute.Sitemap;
 
-  // Guias operacionais e páginas de serviços
+  // Guias operacionais e páginas de serviços (11 artigos pilares publicados)
   const servicePages: MetadataRoute.Sitemap = [
-    "/services/como-precificar-produtos-vender-online",
     "/services/comparativo-marketplaces-vender-online",
-    "/services/direito-troca-devolucao-ecommerce",
+    "/services/como-precificar-produtos-vender-online",
+    "/services/vender-no-mercado-livre",
+    "/services/vender-na-shopee",
+    "/services/vender-no-tiktok-shop",
+    "/services/tudo-sobre-frete-ecommerce",
     "/services/logistica-envio-marketplaces",
+    "/services/direito-troca-devolucao-ecommerce",
     "/services/mei-ou-me-vender-online",
     "/services/negociar-fornecedores-revenda",
     "/services/qual-sistema-loja-virtual-usar",
-    "/services/tudo-sobre-frete-ecommerce",
-    "/services/vender-na-shopee",
-    "/services/vender-no-tiktok-shop",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified,
-    changeFrequency: "weekly",
+    changeFrequency: "weekly" as const,
     priority: 0.85,
   }));
 
-  // Artigos dinâmicos do diretório de posts
+  // Artigos dinâmicos do diretório de posts (content/posts/*.mdx)
   const posts = getAllPosts();
   const blogPosts: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
@@ -79,7 +80,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       : post.date
       ? new Date(post.date)
       : lastModified,
-    changeFrequency: "monthly",
+    changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
