@@ -4,36 +4,32 @@ import type { Metadata } from "next";
 import { Inter, Fira_Code, Anton } from "next/font/google";
 import "./globals.css";
 
-
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  weight: ["400", "500", "600", "700"]
+  weight: ["400", "500", "600", "700"],
 });
 
-
-const firaCode = Fira_Code({ 
+const firaCode = Fira_Code({
   subsets: ["latin"],
   variable: "--font-fira-code",
-  weight: ["400", "500", "700"]
+  weight: ["400", "500", "700"],
 });
 
-
-const anton = Anton({ 
+const anton = Anton({
   subsets: ["latin"],
   variable: "--font-anton",
-  weight: ["400"]
+  weight: ["400"],
 });
 
-
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.zanvexis.com"),
+  metadataBase: new URL("https://www.zanvendas.com"),
   title: {
-    default: "Zanvexis | High-Performance Web3 & Infrastructure",
-    template: "%s | Zanvexis",
+    default: "Zanvendas | Guia & Operação de Vendas Online no Brasil",
+    template: "%s | Zanvendas",
   },
   description:
-    "Engineering studio specialized in high-frequency infrastructure, Solana, and smart contract security.",
+    "Base técnica para lojistas e sellers: fórmulas de precificação com divisor de margem, regras de envio nos marketplaces, tributação e conformidade fiscal.",
   alternates: {
     canonical: "/",
   },
@@ -49,26 +45,33 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Zanvexis | High-Performance Web3 & Infrastructure",
+    title: "Zanvendas | Guia & Operação de Vendas Online no Brasil",
     description:
-      "Engineering studio specialized in high-frequency infrastructure, Solana, and smart contract security.",
-    url: "https://www.zanvexis.com",
-    siteName: "Zanvexis",
+      "Base técnica para lojistas e sellers: fórmulas de precificação com divisor de margem, regras de envio nos marketplaces, tributação e conformidade fiscal.",
+    url: "https://www.zanvendas.com",
+    siteName: "Zanvendas",
+    locale: "pt_BR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zanvexis | High-Performance Web3 & Infrastructure",
+    title: "Zanvendas | Guia & Operação de Vendas Online no Brasil",
     description:
-      "Engineering studio specialized in high-frequency infrastructure, Solana, and smart contract security.",
+      "Base técnica para lojistas e sellers: fórmulas de precificação com divisor de margem, regras de envio nos marketplaces, tributação e conformidade fiscal.",
   },
 };
 
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en">
-      <body className="...">
+    <html
+      lang="pt-BR"
+      className={`${inter.variable} ${firaCode.variable} ${anton.variable}`}
+    >
+      <body className="min-h-screen bg-[#f7f3f1] font-body text-black antialiased selection:bg-[#8e8ef7] selection:text-black">
         <Header />
         {children}
         <Script

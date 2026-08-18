@@ -24,20 +24,20 @@ export default function Header() {
   }, [isMenuOpen]);
 
   const marketplaceLinks = [
-    { name: "MERCADO LIVRE", href: "/vender-no-mercado-livre" },
-    { name: "SHOPEE BRASIL", href: "/vender-na-shopee" },
-    { name: "TIKTOK SHOP", href: "/vender-no-tiktok-shop" },
-    { name: "COMPARATIVO MARKETPLACES", href: "/comparativo-marketplaces-vender-online" },
-    { name: "SISTEMAS DE LOJA VIRTUAL", href: "/qual-sistema-loja-virtual-usar" },
+    
+    { name: "SHOPEE BRASIL", href: "/services/vender-na-shopee" },
+    { name: "TIKTOK SHOP", href: "/services/vender-no-tiktok-shop" },
+    { name: "COMPARATIVO MARKETPLACES", href: "/services/comparativo-marketplaces-vender-online" },
+    { name: "SISTEMAS DE LOJA VIRTUAL", href: "/services/qual-sistema-loja-virtual-usar" },
   ];
 
   const operacaoLinks = [
-    { name: "MEI OU ME PARA E-COMMERCE", href: "/mei-ou-me-vender-online" },
-    { name: "PRECIFICAÇÃO E MARGEM REAL", href: "/como-precificar-produtos-vender-online" },
-    { name: "NEGOCIAR COM FORNECEDORES", href: "/negociar-fornecedores-revenda" },
-    { name: "LOGÍSTICA E DESPACHO", href: "/logistica-envio-marketplaces" },
-    { name: "GUIA COMPLETO DE FRETE", href: "/tudo-sobre-frete-ecommerce" },
-    { name: "DIREITO DE TROCA E DEVOLUÇÃO", href: "/direito-troca-devolucao-ecommerce" },
+    { name: "MEI OU ME PARA E-COMMERCE", href: "/services/mei-ou-me-vender-online" },
+    { name: "PRECIFICAÇÃO E MARGEM REAL", href: "/services/como-precificar-produtos-vender-online" },
+    { name: "NEGOCIAR COM FORNECEDORES", href: "/services/negociar-fornecedores-revenda" },
+    { name: "LOGÍSTICA E DESPACHO", href: "/services/logistica-envio-marketplaces" },
+    { name: "GUIA COMPLETO DE FRETE", href: "/services/tudo-sobre-frete-ecommerce" },
+    { name: "DIREITO DE TROCA E DEVOLUÇÃO", href: "/services/direito-troca-devolucao-ecommerce" },
   ];
 
   return (
@@ -293,7 +293,7 @@ export default function Header() {
               <div className="flex flex-col gap-2">
                 <span className="font-black text-shock text-lg uppercase">[ CONTATO DIRETO ]</span>
                 <Link
-                  href="mailto:contato@zanvendas.com"
+                  href="mailto:zanvexistech@gmail.com"
                   className="text-white hover:text-shock text-base font-black underline underline-offset-4"
                 >
                   CONTATO@ZANVENDAS.COM
