@@ -192,12 +192,12 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-0 pointer-events-none flex flex-col justify-between py-12 opacity-15 font-mono text-[8px] md:text-[10px] text-support">
         <div className="w-full overflow-hidden absolute top-[8%]">
           <div className="animate-marquee-left">
-            {Array(10).fill(LOG_DATA_1).join("")}
+            {Array(3).fill(LOG_DATA_1).join("")}
           </div>
         </div>
         <div className="w-full overflow-hidden absolute top-[52%]">
           <div className="animate-marquee-right">
-            {Array(10).fill(LOG_DATA_2).join("")}
+            {Array(3).fill(LOG_DATA_2).join("")}
           </div>
         </div>
       </div>
