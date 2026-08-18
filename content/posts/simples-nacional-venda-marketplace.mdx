@@ -1,0 +1,100 @@
+---
+title: "Como Calcular o Simples Nacional Vendendo em Marketplace"
+date: "2026-08-06"
+description: "Guia tático sobre tributação no Simples Nacional para quem vende em marketplace: anexos aplicáveis, alíquota efetiva, fator R e exemplo completo de cálculo."
+image: "/service/im229.png"
+---
+
+Vender em marketplace não muda a forma como o Simples Nacional é calculado, mas a maioria dos lojistas erra ao considerar a alíquota nominal da tabela em vez da alíquota efetiva real — e isso distorce diretamente o cálculo de precificação feito no divisor de margem.
+
+Este guia explica em qual anexo do Simples Nacional a atividade de revenda geralmente se enquadra, como calcular a alíquota efetiva corretamente e como o repasse recebido do marketplace entra nesse cálculo.
+
+---
+
+## 1. Em Qual Anexo a Revenda se Enquadra
+
+A maioria das operações de revenda de produtos (compra para revenda, sem industrialização) se enquadra no **Anexo I** do Simples Nacional, destinado ao comércio. Caso a empresa também preste serviço ou fabrique o próprio produto, outros anexos podem se aplicar, sendo necessário consultar um contador para confirmar o enquadramento correto da atividade.
+
+### Faixas de Faturamento Anual (Anexo I - Comércio)
+
+| Faixa | Receita Bruta Acumulada em 12 Meses | Alíquota Nominal |
+| :--- | :--- | :--- |
+| 1ª Faixa | Até R$ 180.000,00 | 4,00% |
+| 2ª Faixa | De R$ 180.000,01 a R$ 360.000,00 | 7,30% |
+| 3ª Faixa | De R$ 360.000,01 a R$ 720.000,00 | 9,50% |
+| 4ª Faixa | De R$ 720.000,01 a R$ 1.800.000,00 | 10,70% |
+
+Consulte sempre a tabela vigente no site oficial do Simples Nacional antes de aplicar esses percentuais, já que faixas e alíquotas podem ser atualizadas.
+
+---
+
+## 2. Alíquota Nominal Não é o Que Você Realmente Paga
+
+O erro mais comum é multiplicar o faturamento total pela alíquota nominal da faixa em que a empresa se encontra. O cálculo correto usa a **alíquota efetiva**, que considera uma parcela a deduzir, evitando que a empresa pague o percentual cheio sobre toda a receita ao subir de faixa.
+
+```text
+Alíquota Efetiva (%) = [(Receita Bruta Acumulada em 12 Meses × Alíquota Nominal) - Parcela a Deduzir] / Receita Bruta Acumulada em 12 Meses
+```
+
+### Exemplo Prático de Aplicação:
+
+```text
+Receita Bruta Acumulada em 12 Meses: R$ 300.000,00
+Faixa: 2ª Faixa (Alíquota Nominal 7,30%, Parcela a Deduzir R$ 5.940,00)
+
+Cálculo:
+(R$ 300.000,00 × 7,30%) - R$ 5.940,00 = R$ 21.900,00 - R$ 5.940,00 = R$ 15.960,00
+
+Alíquota Efetiva = R$ 15.960,00 / R$ 300.000,00 = 5,32%
+```
+
+Nesse exemplo, mesmo estando na faixa nominal de 7,30%, a empresa paga efetivamente 5,32% sobre o faturamento — uma diferença relevante que precisa ser usada corretamente na fórmula do divisor de margem ao precificar produtos.
+
+---
+
+## 3. Como o Repasse do Marketplace Entra no Cálculo
+
+Um ponto de confusão comum: o faturamento considerado para o Simples Nacional é o **valor total da venda ao consumidor**, não o valor líquido que efetivamente cai na conta bancária após o desconto de comissões e taxas do marketplace.
+
+```text
+Base de Cálculo do Simples = Valor Total da Venda (antes de comissões e taxas do marketplace)
+```
+
+Isso significa que, mesmo a plataforma retendo comissão, taxa fixa e eventual taxa de antecipação antes do repasse, o imposto incide sobre o valor bruto da venda registrada, não sobre o valor líquido recebido. Ignorar essa diferença é uma das causas mais comuns de subestimar o imposto devido ao calcular a margem do produto.
+
+---
+
+## 4. Fator R: Quando Ele se Aplica
+
+O Fator R é um mecanismo usado principalmente por empresas de serviço para definir se tributam pelo Anexo III (mais vantajoso) ou Anexo V. Para operações puramente de revenda de produtos físicos enquadradas no Anexo I, o Fator R geralmente não se aplica — mas se a empresa também presta serviços associados à venda (como montagem ou consultoria), vale consultar um contador para verificar se algum enquadramento misto muda essa análise.
+
+---
+
+## 5. Checklist de Organização Fiscal
+
+* [ ] **Anexo de Enquadramento Confirmado**: Um contador validou se a atividade se enquadra corretamente no Anexo I?
+* [ ] **Alíquota Efetiva Calculada**: O cálculo usa a parcela a deduzir, não apenas a alíquota nominal da faixa?
+* [ ] **Base de Cálculo Correta**: O imposto está sendo calculado sobre o valor bruto da venda, não sobre o valor líquido recebido?
+* [ ] **Tabela Vigente Consultada**: As faixas e parcelas a deduzir usadas são as atuais, verificadas na fonte oficial?
+* [ ] **Provisão Mensal Separada**: Existe reserva de caixa mensal para o pagamento do DAS, evitando atraso?
+
+---
+
+## 6. Perguntas Frequentes (FAQ)
+
+### O imposto do Simples Nacional incide sobre o valor líquido ou bruto da venda?
+Incide sobre o valor bruto da venda ao consumidor, antes do desconto de comissões, taxas fixas e outras retenções feitas pelo marketplace no repasse.
+
+### Por que minha empresa paga menos que a alíquota nominal da minha faixa?
+Porque o cálculo correto usa a alíquota efetiva, que aplica uma parcela a deduzir sobre o valor calculado pela alíquota nominal, evitando que toda a receita seja tributada pelo percentual cheio da faixa mais alta atingida.
+
+### Preciso recalcular a alíquota efetiva todo mês?
+Sim, especialmente se o faturamento acumulado nos últimos 12 meses estiver próximo de mudar de faixa, já que isso altera diretamente a alíquota efetiva aplicada e, consequentemente, a margem líquida real do produto.
+
+---
+
+## 7. Guias Relacionados
+
+* [Enquadramento Tributário: MEI vs ME](/services/mei-ou-me-vender-online)
+* [Cálculo de Precificação e Margem Real](/services/como-precificar-produtos-vender-online)
+* [Comparativo de Marketplaces: Taxas e Prazos](/services/comparativo-marketplaces-vender-online)
