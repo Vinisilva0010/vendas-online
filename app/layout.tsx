@@ -72,6 +72,20 @@ export default function RootLayout({
       className={`${inter.variable} ${firaCode.variable} ${anton.variable}`}
     >
       <body className="min-h-screen bg-[#f7f3f1] font-body text-black antialiased selection:bg-[#8e8ef7] selection:text-black">
+        {/* Google Analytics (GA4) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-MMEVPGHPK3"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-MMEVPGHPK3');
+          `}
+        </Script>
+
         <Header />
         {children}
         <Script
