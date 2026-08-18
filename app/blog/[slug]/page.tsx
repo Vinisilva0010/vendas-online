@@ -30,7 +30,7 @@ export async function generateMetadata({
     title: `${post.title} | Zanvendas`,
     description: post.description,
     alternates: {
-      canonical: `https://www.zanvendas.com/blog/${params.slug}`,
+      canonical: `https://zanvendas.zanvexis.com/blog/${params.slug}`,
     },
     openGraph: {
       title: post.title,
@@ -38,14 +38,14 @@ export async function generateMetadata({
       type: "article",
       publishedTime: post.date,
       modifiedTime: post.updated || post.date,
-      url: `https://www.zanvendas.com/blog/${params.slug}`,
-      images: post.image ? [`https://www.zanvendas.com${post.image}`] : [],
+      url: `https://zanvendas.zanvexis.com/blog/${params.slug}`,
+      images: post.image ? [`https://zanvendas.zanvexis.com${post.image}`] : [],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
-      images: post.image ? [`https://www.zanvendas.com${post.image}`] : [],
+      images: post.image ? [`https://zanvendas.zanvexis.com${post.image}`] : [],
     },
   };
 }
@@ -70,7 +70,7 @@ export default function BlogPostPage({
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
-    image: post.image ? [`https://www.zanvendas.com${post.image}`] : [],
+    image: post.image ? [`https://zanvendas.zanvexis.com${post.image}`] : [],
     datePublished: post.date,
     dateModified: post.updated || post.date,
     author: {
