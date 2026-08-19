@@ -66,16 +66,17 @@ export default function BlogPostPage({
     .filter((p) => p.slug !== params.slug)
     .slice(0, 3);
 
-  const jsonLd = {
+    const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
     image: post.image ? [`https://zanvendas.zanvexis.com${post.image}`] : [],
-    datePublished: post.date,
-    dateModified: post.updated || post.date,
+    datePublished: new Date(post.date).toISOString(),
+    dateModified: new Date(post.updated || post.date).toISOString(),
     author: {
       "@type": "Organization",
       name: "Operação Zanvendas",
+      url: "https://zanvendas.zanvexis.com/sobre",
     },
     publisher: {
       "@type": "Organization",
