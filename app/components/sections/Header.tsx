@@ -296,7 +296,7 @@ export default function Header() {
                   href="mailto:zanvexistech@gmail.com"
                   className="text-white hover:text-shock text-base font-black underline underline-offset-4"
                 >
-                  CONTATO@ZANVENDAS.COM
+                  zanvexistech@gmail.com
                 </Link>
               </div>
 
