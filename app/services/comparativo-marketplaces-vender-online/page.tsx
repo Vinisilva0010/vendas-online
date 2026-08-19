@@ -232,7 +232,7 @@ const PAGE_DATA: ServicePageProps = {
     {
       title: "Vender no TikTok Shop",
       slug: "/services/vender-no-tiktok-shop",
-      image: "/service/im88.png",
+      image: "/service/im888.png",
       description:
         "Configuração de catálogo, integração de afiliados e operação de vendas com conteúdo nativo e transmissões ao vivo.",
     },

@@ -48,3 +48,25 @@ export function getAllPosts(): PostData[] {
     a.date < b.date ? 1 : -1
   );
 }
+
+export function extractFaqFromContent(
+  content: string
+): { question: string; answer: string }[] {
+  const faqSectionMatch = content.match(
+    /##[^\n]*(?:Perguntas Frequentes|FAQ)[^\n]*\n([\s\S]*?)(?=\n##\s|\n---\s*\n##|\n---\s*$|$)/i
+  );
+
+  if (!faqSectionMatch) return [];
+
+  const faqSection = faqSectionMatch[1];
+  const blocks = faqSection.split(/\n###\s+/).slice(1);
+
+  return blocks
+    .map((block) => {
+      const lines = block.trim().split("\n");
+      const question = lines[0].trim();
+      const answer = lines.slice(1).join(" ").trim();
+      return { question, answer };
+    })
+    .filter((item) => item.question && item.answer);
+}

@@ -1,4 +1,4 @@
-import { getAllPosts } from "@/lib/blog";
+import { getAllPosts, extractFaqFromContent } from "@/lib/blog";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
@@ -66,7 +66,7 @@ export default function BlogPostPage({
     .filter((p) => p.slug !== params.slug)
     .slice(0, 3);
 
-    const jsonLd = {
+  const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
@@ -85,6 +85,24 @@ export default function BlogPostPage({
     description: post.description,
   };
 
+  const faqItems = extractFaqFromContent(post.content);
+
+  const faqJsonLd =
+    faqItems.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.answer,
+            },
+          })),
+        }
+      : null;
+
   return (
     <div className="flex min-h-screen flex-col bg-[#f7f3f1] text-black">
       <script
@@ -93,6 +111,15 @@ export default function BlogPostPage({
           __html: JSON.stringify(jsonLd),
         }}
       />
+
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqJsonLd),
+          }}
+        />
+      )}
 
       <main className="relative z-20 flex-grow px-4 pb-24 pt-32 sm:px-6 md:px-12">
         <article className="mx-auto max-w-4xl">
